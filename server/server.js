@@ -14,10 +14,6 @@ app.use(express.static(publicpath));
 
 io.on('connection', (socket)=>{
  console.log('new user connected');
- socket.emit('newEmail', {
-     "from": "anil@gmail.com",
-     "to": "kashyap@gmail.com"
- })
 socket.emit('newMessage',GenerateMessage('Admin', 'Welcome to Live basic twitter app'))
 socket.broadcast.emit('newMessage',GenerateMessage('Admin', 'New user has been joined'));
  socket.on('createMessage', (message, callback) => {
@@ -27,6 +23,7 @@ socket.broadcast.emit('newMessage',GenerateMessage('Admin', 'New user has been j
  });
  socket.on('disconnect', ()=> {
     console.log("user disconnected");
+    socket.broadcast.emit('newMessage',GenerateMessage('User', 'User has been disconnected'));
  })
 });
 server.listen(port, () => {
