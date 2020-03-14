@@ -1,14 +1,9 @@
 var socket = io();
 socket.on('connect', () =>{
-    console.log('connected to server');
-
-    
+    console.log('connected to server');  
 })
 socket.on('disconnect', ()=>{
     console.log('disconnected to server');
-})
-socket.on('newEmail', function(email){
-    console.log(email);
 })
 socket.on('newMessage', (message)=>{
     console.log(message);
