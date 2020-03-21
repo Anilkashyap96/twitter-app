@@ -12,7 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "jsonwebtoken": "^8.5.1",
     "mocha": "^3.0.2",
+    "node-localStorage": "0.0.1",
+    "node-localstorage": "^2.1.5",
     "socket.io": "^1.4.8"
   },
   "devDependencies": {
