@@ -22,6 +22,7 @@ $('#submit').click(function(){
         from: 'User',
         text: msgText
     }, function(){
+        var msgText = $('.msgtext').val('');
         console.log('got it');
     })
 });
